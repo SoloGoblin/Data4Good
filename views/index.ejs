@@ -1,0 +1,25 @@
+<%- include('partials/header', {title:"Do Good information: Home",user:user}) -%>
+<main>
+  <p>
+    Welcome to do good<br>
+  </p>
+  <% if(!user) {%>
+    <%- include('partials/auth') -%>
+  <%}%>
+  
+  <% if(user) {%>
+     
+    <div id="topics"></div>
+
+  <%}%>
+
+</main>
+
+<script>
+  fetch("/topics/").then(res=>res.text()).then(topics=>{
+   document.getElementById("topics").innerHTML=topics
+  })
+
+
+</script>
+<%- include('partials/footer') -%>

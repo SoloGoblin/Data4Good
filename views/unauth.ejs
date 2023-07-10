@@ -1,0 +1,25 @@
+<%- include('partials/header', {title:"Spelling Bee: Home",user}) -%>
+<main>
+  <p>
+    Welcome to Spelling Bee! <br>
+    You should login to be able to access this page
+  </p>
+
+  <div class="row">
+    <div class="col-5"></div>
+    <div class="col-2">
+
+      <a class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none">
+        <img width="100%" alt="Google sign-in" src="https://simphy.com/google-signin-button.png" />
+
+
+      </a>
+    </div>
+    <div class="col-5"></div>
+  </div>
+
+  <br>
+  <br>
+  <a style="display:block;text-align:center" href="/startGame">Click to play a game</a>
+</main>
+<%- include('partials/footer') -%>
