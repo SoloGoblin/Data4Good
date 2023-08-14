@@ -1,0 +1,28 @@
+
+<div class="topics-container">
+    <%if(level==4) {%>
+
+    
+            
+            
+            <%- include('topic_card',{topics:topics,topic:topic,category,cardTitle,topic}) -%>
+        
+        
+
+
+
+        <%}else{%>
+        
+<% topics.forEach(topic=>{%>
+<a href='/<%=level%>/<%=topic.id%>/0' >
+<div class="card" style=background-image:url(<%=topic.imageURL%>)>
+<p><%=topic.name%></p>
+</div>
+</a>
+
+<%})%>
+
+<%}%>
+
+
+</div>

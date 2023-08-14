@@ -1,0 +1,23 @@
+<%- include('partials/header', {title:"Do Good information: Home",user:user}) -%>
+<main>
+  <% if(!user) {%>
+    <%- include('partials/auth') -%>
+  <%}%>
+
+  <% if(user) {%>
+  <div id="topics"> table loader here</div>
+    <%}%>
+</main>
+
+<script>
+
+  let level="<%=level%>"
+  let category="<%=category%>"
+  
+  fetch("/topics/table/"+level+"/"+category).then(res=>res.text()).then(topics=>{
+   console.log(topics)
+   document.getElementById("topics").innerHTML=topics
+  })
+
+</script>
+<%- include('partials/footer') -%>

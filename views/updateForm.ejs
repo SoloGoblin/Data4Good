@@ -1,0 +1,38 @@
+<%- include('partials/header', {title:"Do Good information: Home",user:user}) -%>
+<main>
+  <% if(!user) {%>
+    <%- include('partials/auth') -%>
+  <%}%>
+
+  <% if(user) {%>
+
+    <% if(level==1 || level==2) {%>
+        <form  action="/topics/edit/<%=level%>/<%=topic%>" method="post">
+          
+            <input type="text" placeholder="name" name="name" />
+            <input type="text" placeholder="image url" name="imageURL" />
+            
+              <button type="submit"   data-dismiss="modal" class="btn btn-primary">Update</button>
+      </form>
+          
+
+
+<%}%>
+
+<% if(level==3) {%>
+  <form  action="/topics/edit/<%=level%>/<%=topic%>" method="post">
+          
+    <input type="text" placeholder="Source Title" name="sourceTitle" />
+    <input type="text" placeholder="Link" name="link" />
+    <textarea rows="4" cols="10" placeholder="description" name="description"></textarea>
+   
+      <button type="submit"   data-dismiss="modal" class="btn btn-primary">Update</button>
+    </form>
+
+    <%}%>
+
+    <%}%>
+   
+</main>
+
+<%- include('partials/footer') -%>

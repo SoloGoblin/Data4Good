@@ -1,0 +1,13 @@
+<%- include('partials/header', {title:"Do Good information: Home",user:user}) -%>
+<main>
+  <% if(!user) {%>
+    <%- include('partials/auth') -%>
+  <%}%>
+
+  <% if(user) {%>
+    <h1>Welcome to your dashbpar</h1>
+      load the topics to create and edit it <a style="color:blue;" href="/adminDashboard/tables/1/1">here</a>
+    <%}%>
+</main>
+
+<%- include('partials/footer') -%>

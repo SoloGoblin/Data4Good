@@ -1,0 +1,50 @@
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<div class="card3">
+<h1><%=cardTitle%></h1>
+
+    <div class="card-body">
+    <div class="left-menu">
+    
+       <%topics.forEach((btn,index)=>{%>
+
+           <% if( btn.id==topic.id){%>
+
+     
+ <a href="/3/<%=category%>/<%=index%>" class="link-button " >
+ <div class="card-selected-link"><%=btn.sourceTitle%></div>
+</a>
+            <%}else{%>
+              
+              <a href="/3/<%=category%>/<%=index%>" class="link-button" >
+              <div>
+                <%=btn.sourceTitle%>
+              </div>
+            </a>
+              <%}%>
+
+        <%})%>
+
+    </div>
+   <div class="card-details">
+    <h1><%=topic.sourceTitle%></h1>
+   <div class="card-content">
+  <%=topic.description%>
+</div>
+<div class="card-options">
+<a href="<%=topic.link%>" target="_blank">Go to Site</a>
+<a href="#">Download Static Data</a>
+</div>
+
+
+   </div>
+
+ </div>
+</div>

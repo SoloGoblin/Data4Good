@@ -1,0 +1,58 @@
+<%- include('partials/header', {title:"Spelling Bee: Create Player",user}) -%>
+<main>
+
+  <h2>Welcome <%=name%>!</h2>
+  <table>
+    <tr>
+
+      </th>
+      <th>
+        Last Update
+      </th>
+      <th>
+        First LogIn
+      </th>
+      <th>
+        #Logins
+      </th>
+      <th>
+        Role
+      </th>
+    </tr>
+
+    <tr>
+
+        <%=recentUpdate%>
+      </td>
+      <td>
+        <%=firstLogin %>
+      </td>
+      <td>
+        <%=numberOfLogins%>
+      </td>
+      <td>
+        <%=role%>
+      </td>
+    </tr>
+
+  </table>
+
+
+
+  <form action="/updateName" method="POST">
+
+
+    <div class="container create-player">
+
+      <div class="row">
+        <label class="col-3 mx-auto my-3" for="name">Player Name:
+          <input type="text" Id="name" name="playerName" value="">
+        </label>
+      </div>
+      <div class="row">
+        <input class="col-3 mx-auto my-3" type="submit" value="Create a new player">
+      </div>
+    </div>
+  </form>
+</main>
+<%- include('partials/footer') -%>
